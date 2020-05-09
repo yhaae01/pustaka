@@ -33,9 +33,6 @@
                             
                             <hr>
                             <div class="text-center">
-                                <a class="small" href="#">Lupa Password?</a>
-                            </div>
-                            <div class="text-center">
                                 <a class="small" href="<?= base_url('auth/registration') ?>">Buat akun baru!</a>
                             </div>
                         </div>
