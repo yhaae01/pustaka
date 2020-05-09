@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 18, 2020 at 12:34 PM
+-- Generation Time: May 09, 2020 at 11:11 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.1
 
@@ -72,18 +72,18 @@ CREATE TABLE `buku` (
 --
 
 INSERT INTO `buku` (`id`, `judul_buku`, `id_kategori`, `pengarang`, `penerbit`, `tahun_terbit`, `isbn`, `stok`, `dipinjam`, `dibooking`, `image`) VALUES
-(1, 'Statistika dengan Program Komputer', 1, 'Ahmad Kholiqul Amin', 'Deep Publish', 2014, '9786022809432', 6, 1, 1, 'img1557402455.jpg'),
-(2, 'Mudah Belajar Komputer untuk Anak', 1, 'Bambang Agus Setiawan', 'Huta Media', 2014, '9786025118500', 4, 3, 2, 'img1557402397.jpg'),
-(5, 'PHP Komplet', 1, 'Jubilee', 'Elex Media Komputindo', 2017, '8346753547', 5, 1, 1, 'img1555522493.jpg'),
-(10, 'Detektif Conan Ep 200', 9, 'Okigawa sasuke', 'Cultura', 2016, '874387583987', 5, 0, 0, 'img1557401465.jpg'),
-(14, 'Bahasa Indonesia', 2, 'Umri Nur\'aini dan Indriyani', 'Pusat Perbukuan', 2015, '757254724884', 3, 0, 0, 'img1557402703.jpg'),
-(15, 'Komunikasi Lintas Budaya', 5, 'Dr. Dedy Kurnia', 'Published', 2015, '878674646488', 5, 0, 0, 'img1557403156.jpg'),
-(16, 'Kolaborasi Codeigniter dan Ajax dalam Perancangan CMS', 1, 'Anton Subagia', 'Elex Media komputindo', 2017, '43345356577', 5, 0, 0, 'img1557403502.jpg'),
-(17, 'From Hobby to Money', 4, 'Deasylawati', 'Elex Media Komputindo', 2015, '87968686787879', 5, 0, 0, 'img1557403658.jpg'),
-(18, 'Buku Saku Pramuka', 8, 'Rudi Himawan', 'Pusat Perbukuan', 2016, '97868687978796', 6, 0, 0, 'img1557404613.jpg'),
-(19, 'Rahasia Keajaiban Bumi', 3, 'Nurul Ihsan', 'Luxima', 2014, '565756565768868', 5, 0, 0, 'img1557404689.jpg'),
-(20, 'Buku Pintar Puasa Wajib dan Sunnah Sepanjang Masa', 7, 'Ali Hasan', 'Luxima', 2011, '32342342344234', 5, 0, 0, 'img1557404775.jpg'),
-(21, 'Aspek Hukum dalam Penelitian', 6, 'Rianto Adi', 'Buku Obor', 2015, '7565646455757', 5, 0, 0, 'img1557404853.jpg');
+(1, 'Statistika dengan Program Komputer', 1, 'Ahmad Kholiqul Amin', 'Deep Publish', 2014, '9786022809432', 99, 1, 8, 'img1557402455.jpg'),
+(2, 'Mudah Belajar Komputer untuk Anak', 1, 'Bambang Agus Setiawan', 'Huta Media', 2014, '9786025118500', 98, 3, 2, 'img1557402397.jpg'),
+(5, 'PHP Komplet', 1, 'Jubilee', 'Elex Media Komputindo', 2017, '8346753547', 100, 1, 2, 'img1555522493.jpg'),
+(10, 'Detektif Conan Ep 200', 9, 'Okigawa sasuke', 'Cultura', 2016, '874387583987', 100, 0, 0, 'img1557401465.jpg'),
+(14, 'Bahasa Indonesia', 2, 'Umri Nur\'aini dan Indriyani', 'Pusat Perbukuan', 2015, '757254724884', 100, 0, 0, 'img1557402703.jpg'),
+(15, 'Komunikasi Lintas Budaya', 5, 'Dr. Dedy Kurnia', 'Published', 2015, '878674646488', 99, 3, 0, 'img1557403156.jpg'),
+(16, 'Kolaborasi Codeigniter dan Ajax dalam Perancangan CMS', 1, 'Anton Subagia', 'Elex Media komputindo', 2017, '43345356577', 100, 0, 1, 'img1557403502.jpg'),
+(17, 'From Hobby to Money', 4, 'Deasylawati', 'Elex Media Komputindo', 2015, '87968686787879', 99, 2, -1, 'img1557403658.jpg'),
+(18, 'Buku Saku Pramuka', 8, 'Rudi Himawan', 'Pusat Perbukuan', 2016, '97868687978796', 100, 0, 0, 'img1557404613.jpg'),
+(19, 'Rahasia Keajaiban Bumi', 3, 'Nurul Ihsan', 'Luxima', 2014, '565756565768868', 100, 2, 0, 'img1557404689.jpg'),
+(20, 'Buku Pintar Puasa Wajib dan Sunnah Sepanjang Masa', 7, 'Ali Hasan', 'Luxima', 2011, '32342342344234', 100, 0, 1, 'img1557404775.jpg'),
+(21, 'Aspek Hukum dalam Penelitian', 6, 'Rianto Adi', 'Buku Obor', 2015, '7565646455757', 100, 0, 0, 'img1557404853.jpg');
 
 -- --------------------------------------------------------
 
@@ -128,6 +128,13 @@ CREATE TABLE `pinjam` (
   `total_denda` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `pinjam`
+--
+
+INSERT INTO `pinjam` (`no_pinjam`, `tgl_pinjam`, `id_booking`, `id_user`, `tgl_kembali`, `tgl_pengembalian`, `status`, `total_denda`) VALUES
+('08052020001', '2020-05-08', '08052020001', 25, '2020-05-11', '2020-05-08', 'Kembali', 0);
+
 -- --------------------------------------------------------
 
 --
@@ -139,6 +146,15 @@ CREATE TABLE `pinjam_detail` (
   `id_buku` int(11) NOT NULL,
   `denda` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `pinjam_detail`
+--
+
+INSERT INTO `pinjam_detail` (`no_pinjam`, `id_buku`, `denda`) VALUES
+('08052020001', 15, 5000),
+('08052020001', 21, 5000),
+('08052020001', 19, 5000);
 
 -- --------------------------------------------------------
 
@@ -183,7 +199,9 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`id`, `name`, `address`, `email`, `image`, `password`, `role_id`, `is_active`, `date_created`) VALUES
 (2, 'ahmad maulana', 'Bogor', 'ahmad@gmail.com', 'default.jpg', '$2y$10$MPSZnE72IfI4NtBzmtJsluNUsWYOkMzZqpr68xwzKQ.9cbZ8bkQlm', 2, 1, 1585472070),
-(14, 'surya intan permana', 'Bogor', 'suryha7fold@gmail.com', 'P_20191227_0810231.jpg', '$2y$10$Nc.4A5IvIwDu5I3fgojr4u2gFIbuYmUOGVU02aODczopIzv7eFtce', 1, 1, 1585660215);
+(14, 'surya intan permana', 'Bogor', 'suryha7fold@gmail.com', 'P_20191227_0810231.jpg', '$2y$10$Nc.4A5IvIwDu5I3fgojr4u2gFIbuYmUOGVU02aODczopIzv7eFtce', 1, 1, 1585660215),
+(24, 'chintya meidina', 'ciomas', 'cintia@gmail.com', 'default.jpg', '$2y$10$sVnr5Dx7y3c9jFu/g/WPZ.UMGJuYLou.4l0Bn7g5kPqZ2dgxoKqGS', 2, 1, 1588126868),
+(25, 'surya intan permana', 'dramaga', 'surya@gmail.com', 'default.jpg', '$2y$10$GKKEyIfZTSqIedYhlCMsSuLT4YSultqiX/TXFtVMe2rRbNzMegt9K', 2, 1, 1588138523);
 
 -- --------------------------------------------------------
 
@@ -206,7 +224,8 @@ INSERT INTO `user_access_menu` (`id`, `role_id`, `menu_id`) VALUES
 (2, 1, 2),
 (3, 2, 2),
 (6, 1, 9),
-(8, 1, 10);
+(8, 1, 10),
+(10, 1, 11);
 
 -- --------------------------------------------------------
 
@@ -228,7 +247,8 @@ INSERT INTO `user_menu` (`id`, `menu`) VALUES
 (2, 'User'),
 (3, 'Menu'),
 (9, 'Buku'),
-(10, 'Transaksi');
+(10, 'Transaksi'),
+(11, 'Laporan');
 
 -- --------------------------------------------------------
 
@@ -279,7 +299,10 @@ INSERT INTO `user_sub_menu` (`id`, `menu_id`, `title`, `url`, `icon`, `is_active
 (9, 9, 'Data Buku', 'buku/index', 'fas fa-fw fa-book', 1),
 (12, 9, 'Kategori Buku', 'buku/category', 'fas fa-fw fa-bookmark', 1),
 (13, 10, 'Data Peminjaman', 'pinjam', 'fa fa-fw fa-shopping-cart', 1),
-(14, 10, 'Data Booking', 'pinjam/daftarBooking', 'fa fa-fw fa-list', 1);
+(14, 10, 'Data Booking', 'pinjam/daftarBooking', 'fa fa-fw fa-list', 1),
+(15, 11, 'Laporan Data Buku', 'laporan/laporan_buku', 'fa fa-fw fa-address-book', 1),
+(16, 11, 'Laporan Data Anggota', 'laporan/laporan_anggota', 'fa fa-fw fa-address-book', 1),
+(17, 11, 'Laporan Peminjaman', 'laporan/laporan_peminjaman', 'fa fa-fw fa-address-book', 1);
 
 --
 -- Indexes for dumped tables
@@ -359,7 +382,7 @@ ALTER TABLE `user_sub_menu`
 -- AUTO_INCREMENT for table `booking_detail`
 --
 ALTER TABLE `booking_detail`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `buku`
@@ -383,19 +406,19 @@ ALTER TABLE `temp`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `user_access_menu`
 --
 ALTER TABLE `user_access_menu`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `user_menu`
 --
 ALTER TABLE `user_menu`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `user_role`
@@ -407,7 +430,7 @@ ALTER TABLE `user_role`
 -- AUTO_INCREMENT for table `user_sub_menu`
 --
 ALTER TABLE `user_sub_menu`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

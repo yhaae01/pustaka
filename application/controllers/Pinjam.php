@@ -99,7 +99,7 @@ class Pinjam extends CI_Controller {
         //update stok dan dipinjam pada tabel buku
         $this->db->query("UPDATE buku, pinjam_detail SET buku.dipinjam=buku.dipinjam-1, buku.stok=buku.stok+1 WHERE buku.id=pinjam_detail.id_buku");
         
-        $this->session->set_flashdata('pesan', '<div class="laert alert-message alert-success" role="alert"></div>');
+        $this->session->set_flashdata('message', '<div class="laert alert-message alert-success" role="alert"></div>');
         redirect(base_url('pinjam'));
     }
 
