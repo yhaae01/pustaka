@@ -60,7 +60,7 @@ class Booking extends CI_Controller {
             'tahun_terbit'  => $d->tahun_terbit
         ];
 
-        //cek apakah buku yang di klik booking sudah ada di keranjang40
+        //cek apakah buku yang di klik booking sudah ada di keranjang
         $temp = $this->Booking_model->getDataWhere('temp', ['id_buku' => $id_buku])->num_rows();
         $userid = $this->session->userdata('id_user');
         
@@ -116,7 +116,7 @@ class Booking extends CI_Controller {
         $isibooking = [
             'id_booking'    => $this->Booking_model->kodeOtomatis('booking', 'id_booking'),
             'tgl_booking'   => date('Y-m-d H:m:s'),
-            'batas_ambil'   => date('Y-md', strtotime('+2 days', strtotime($tglsekarang))),
+            'batas_ambil'   => date('Y-m-d', strtotime('+2 days', strtotime($tglsekarang))),
             'id_user'       => $where
         ];
 
