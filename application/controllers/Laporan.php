@@ -59,6 +59,17 @@ class Laporan extends CI_Controller {
         $this->dompdf->stream("laporan_data_buku.pdf", array('Attachment' => 0));
     }
 
+    public function LaporanExcel()
+    {
+        $data = array (
+            'title' => 'Laporan Buku',
+            'buku'  => $this->Buku_model->getBuku()->result_array()
+        );
+        
+        $this->load->view('buku/laporan-excel', $data);
+        
+    }
+
 }
 
 /* End of file Laporan.php */
