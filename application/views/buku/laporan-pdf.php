@@ -1,14 +1,10 @@
-<!DOCTYPE html>
-<html lang="en"><head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html>
+<head>
     <title></title>
-</head><body>
+</head>
+<body>
 
     <style type="text/css">
-        body {
-            display: block;
-        }
         .table-data{
             width: 100%;
             border-collapse: collapse;
@@ -51,8 +47,5 @@
             }
         ?>
     </table>
-<script type="text/javascript">
-        window.print();
-</script>
 </body>
 </html>
