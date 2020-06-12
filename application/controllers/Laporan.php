@@ -4,6 +4,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Laporan extends CI_Controller {
 
+    
+    public function __construct()
+    {
+        parent::__construct();
+        $this->load->library('dompdf_gen');
+        
+    }
+    
+
     public function index()
     {
         
@@ -29,6 +38,25 @@ class Laporan extends CI_Controller {
         $data['kategori']   = $this->Buku_model->getKategori()->result_array();
 
         $this->load->view('buku/laporan-print-buku', $data);
+    }
+
+    public function LaporanPDF()
+    {
+        $data['buku']   = $this->Buku_model->getBuku()->result_array();
+        
+        $this->load->library('dompdf_gen');
+        $this->load->view('buku/laporan-pdf', $data);
+        
+        $paper_size = 'A4';
+        $orientation = 'landscape';
+        $html = $this->output->get_output();
+        $this->dompdf->set_paper($paper_size, $orientation);
+        
+        // Convert to PDF
+        $this->dompdf->load_html($html);
+        $this->dompdf->render();
+        ob_end_clean();
+        $this->dompdf->stream("laporan_data_buku.pdf", array('Attachment' => 0));
     }
 
 }

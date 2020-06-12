@@ -19,7 +19,7 @@
 
                             <form class="user" method="post" action="<?= base_url('auth') ?>">
                                 <div class="form-group">
-                                    <input type="text" class="form-control form-control-user" value="<?= set_value('email'); ?>" id="email" name="email" placeholder="Enter Email Address...">
+                                    <input type="text" class="form-control form-control-user" autocomplete="no" value="<?= set_value('email'); ?>" id="email" name="email" placeholder="Enter Email Address...">
                                     <?= form_error('email', '<small class="text-danger pl-3">', '</small>'); ?>
                                 </div>
                                 <div class="form-group">
@@ -31,10 +31,10 @@
                                 </button>
                             </form>
                             
-                            <hr>
-                            <div class="text-center">
+                            <!-- <hr> -->
+                            <!-- <div class="text-center">
                                 <a class="small" href="<?= base_url('auth/registration') ?>">Buat akun baru!</a>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>
