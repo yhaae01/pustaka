@@ -26,10 +26,9 @@
                     </thead>
                     <tbody>
                     <?php
-                        $a = 1;
                         foreach ($buku as $b) { ?>
                         <tr>
-                            <th scope="row"><?= $a++; ?></th>
+                            <th scope="row"><?= ++$start; ?></th>
                             <td><?= $b['judul_buku']; ?></td>
                             <td><?= $b['pengarang']; ?></td>
                             <td><?= $b['penerbit']; ?></td>
@@ -40,6 +39,7 @@
                         <?php } ?>
                     </tbody>
                 </table>
+                <?= $this->pagination->create_links(); ?>
             </div>
         </div>
     </div>
