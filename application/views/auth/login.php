@@ -31,10 +31,10 @@
                                 </button>
                             </form>
                             
-                            <!-- <hr> -->
-                            <!-- <div class="text-center">
+                            <hr>
+                            <div class="text-center">
                                 <a class="small" href="<?= base_url('auth/registration') ?>">Buat akun baru!</a>
-                            </div> -->
+                            </div>
                         </div>
                     </div>
                 </div>
